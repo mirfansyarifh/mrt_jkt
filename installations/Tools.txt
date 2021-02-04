@@ -1,0 +1,2 @@
+Download Xampp sebagai server Apache xampp-windows-x64-7.3-1-VC15-installer
+Download Visual Studio Code sebagai text editor
