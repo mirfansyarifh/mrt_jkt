@@ -10,7 +10,10 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">In</span>
-                <span class="info-box-number"><?= $trans_in ?> Transaksi</span>
+                <span class="info-box-number">
+                <?= $trans_in ?> Transaksi Total <br>
+                <?= $trans_inByTime ?> Transaksi Bulan ini
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -23,7 +26,10 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Open</span>
-                <span class="info-box-number"><?= $trans_open ?> Transaksi</span>
+                <span class="info-box-number">
+                <?= $trans_open ?> Transaksi Total <br>
+                <?= $trans_openByTime ?> Transaksi Bulan ini
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -36,7 +42,10 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Out</span>
-                <span class="info-box-number"><?= $trans_out ?> Transaksi</span>
+                <span class="info-box-number">
+                <?= $trans_out ?> Transaksi Total <br>
+                <?= $trans_outByTime ?> Transaksi Bulan ini
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -49,7 +58,10 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Consign</span>
-                <span class="info-box-number"><?= $trans_consign ?> Transaksi</span>
+                <span class="info-box-number">
+                <?= $trans_consign ?> Transaksi Total <br>
+                <?= $trans_consignByTime ?> Transaksi Bulan ini
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>

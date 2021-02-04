@@ -1,3 +1,5 @@
+<a href="<?php echo base_url ('products/edit/'.$products->product_id) ?>" class ="btn btn-warning btn-xs"><i class ="fa fa-edit"></i> Edit </a>
+
 <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-<?php echo $products->product_id	?>">
   <i class="fa fa-trash" ></i> Delete
 </button>

@@ -17,7 +17,7 @@ if($this->session->flashdata('sukses')){
         
         <div class="card shadow mb-4">
             <div class="card-body">
-                <table id="example2" class="table table-bordered table-hover">
+                <table id="example2" class="table table-bordered table-hover"style="text-align: center;">
                     <thead>
                     <tr>
                         <th>NO</th>
@@ -40,9 +40,12 @@ if($this->session->flashdata('sukses')){
                             <td><?php echo $transaction->t_date ?></td>
                             <td><?php echo $transaction->stock ?? '0' ?></td>
                             <td style="width: 200px">
-                            <a href="<?php echo base_url ('transactions/'.$category.'/edit/'.$transaction->t_id) ?>" class ="btn btn-warning btn-xs"><i class ="fa fa-edit"></i> Edit </a>
                             <?php include ('detail.php')?>
-                            <?php include ('delete.php')?>
+                             <?php 
+                                if ($this->session->userdata('akses_level') == 'admin') {
+                                     include ('delete.php');
+                                };
+                            ?>
                             </td>
                         </tr>
                             <?php $no++;} ?>

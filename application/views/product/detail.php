@@ -11,7 +11,7 @@
           <span aria-hidden="true">&times;</span></button>
       </div>          
         
-      <div class="modal-body">	
+      <div class="modal-body" style="text-align: left;">	
       <table class="table table-bordered detail-view" style="text-transform: uppercase">
 
 <tr>

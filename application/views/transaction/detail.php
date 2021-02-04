@@ -1,3 +1,4 @@
+
 <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#view-<?php echo $transaction->t_id	?>">
   <i class="fa fa-eye" ></i> Detail
 </button>
@@ -11,7 +12,7 @@
           <span aria-hidden="true">&times;</span></button>
       </div>          
         
-      <div class="modal-body">	
+      <div class="modal-body" style="text-align: left;">	
       <table class="table table-bordered detail-view" style="text-transform: uppercase">
 
 <tr>

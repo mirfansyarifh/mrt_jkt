@@ -29,9 +29,8 @@ class Products extends CI_Controller {
 		// Validasi Input
 		$valid = $this->form_validation;
 
-		$valid->set_rules('no_manufacture', 'No Manufacture', 'required|is_unique[products.no_manufacture]',
-			array ( 'required'		=> 	'%s harus diisi!',
-					'is_unique'		=>	'%s product sudah ada. Buat product baru!'));
+		$valid->set_rules('no_manufacture', 'No Manufacture', 'required',
+			array ( 'required'		=> 	'%s harus diisi!'));
 
 		$valid->set_rules('no_material', 'No Material', 'required|is_unique[products.no_material]',
 			array ( 'required'		=> 	'%s harus diisi!',

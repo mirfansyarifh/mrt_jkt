@@ -8,6 +8,13 @@ class Dashboard_model extends CI_Model
         return $this->db->count_all($table);
     }
 
+    public function countByTime($table)
+    {
+        $like = date('Y') .'-'. date('m');
+        $this->db->like('t_date', $like, 'after');
+        return count($this->db->get($table)->result_array());
+        
+    }
     
     public function getProducts()
     {

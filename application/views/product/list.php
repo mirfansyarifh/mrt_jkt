@@ -21,7 +21,7 @@ if($this->session->flashdata('sukses')){
         
         <div class="card shadow mb-4">
             <div class="card-body">
-                <table id="example2" class="table table-bordered table-hover" style="text-align: center;">
+                <table id="example2" class="table table-bordered table-hover; text-align: center;">
                     <thead>
                     <tr>
                         <th>NO</th>
@@ -34,17 +34,19 @@ if($this->session->flashdata('sukses')){
                     </thead>
                         <tbody>
                         <?php $no=1; foreach($products as $products) { ?>
-
                         <tr>
                             <td><?php echo $no ?></td>
                             <td><?php echo $products->no_manufacture ?></td>
                             <td><?php echo $products->no_material ?></td>
                             <td><?php echo $products->branch_plant ?></td>
                             <td><?php echo $products->stock ?? '0' ?></td>
-                            <td style="width: 200px">
-                            <a href="<?php echo base_url ('products/edit/'.$products->product_id) ?>" class ="btn btn-warning btn-xs"><i class ="fa fa-edit"></i> Edit </a>
+                            <td style="width: 200px;">
                             <?php include ('detail.php')?>
-                            <?php include ('delete.php')?>
+                            <?php 
+                                if ($this->session->userdata('akses_level') == 'admin') {
+                                     include ('delete.php');
+                                };
+                            ?>
                             </td>
                         </tr>
                             <?php $no++;} ?>

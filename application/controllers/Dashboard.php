@@ -11,10 +11,8 @@ class Dashboard extends CI_Controller {
 		$this->simple_login->cek_login();
         $this->load->model('Dashboard_model', 'dashboard');
 
-
 	}
 
-	
 	//Halaman utama admin Dasbor
 	public function index()
 	{	
@@ -25,20 +23,20 @@ class Dashboard extends CI_Controller {
 			$arrProd[] = ['y' => $v->stock, 'label' => $v->no_manufacture];
 			} ;
 			$dataPoints = json_encode($arrProd, JSON_NUMERIC_CHECK);
-			// if ($arrProd !== NULL) {
-			// 	$dataPoints = json_encode($arrProd, JSON_NUMERIC_CHECK);
-			// } else {
-			// 	$dataPoints = array( 'y' => '0', 'label' => 'BELUM ADA DATA');
-			// };
+			
 
         $data['title'] = "Dashboard";
         $data['content'] = "dashboard/list";
         $data['trans_in'] = $this->dashboard->count('trans_in');
+        $data['trans_inByTime'] = $this->dashboard->countByTime('trans_in');
         $data['trans_open'] = $this->dashboard->count('trans_open');
+        $data['trans_openByTime'] = $this->dashboard->countByTime('trans_open');
         $data['trans_out'] = $this->dashboard->count('trans_out');
+        $data['trans_outByTime'] = $this->dashboard->countByTime('trans_out');
 		$data['trans_consign'] = $this->dashboard->count('trans_consign');
+		$data['trans_consignByTime'] = $this->dashboard->countByTime('trans_consign');
 		$data['dataPoints'] = $dataPoints;
-
+				
 		//Column Chart
 		$data['ASN'] = $this->dashboard->countByBranch('ASN');
 		$data['BHI'] = $this->dashboard->countByBranch('BHI');
@@ -54,8 +52,6 @@ class Dashboard extends CI_Controller {
 		$data['SNY'] = $this->dashboard->countByBranch('SNY');
 		$data['STB'] = $this->dashboard->countByBranch('STB');
 		$data['OTHER'] = $this->dashboard->countByBranch('OTHER');
-			// print_r($dataPoints); die;
-
 
 			//Line Chart
 
