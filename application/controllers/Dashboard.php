@@ -20,7 +20,7 @@ class Dashboard extends CI_Controller {
 		$stock = $this->dashboard->getProducts();
 		$arrProd = [];
 		foreach ($stock as $k => $v) {
-			$arrProd[] = ['y' => $v->stock, 'label' => $v->no_manufacture];
+			$arrProd[] = ['y' => $v->stock, 'label' => $v->no_material];
 			} ;
 			$dataPoints = json_encode($arrProd, JSON_NUMERIC_CHECK);
 			

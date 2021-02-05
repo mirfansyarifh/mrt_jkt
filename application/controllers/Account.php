@@ -84,7 +84,7 @@ class Account extends CI_Controller {
 		
 			if($valid->run()==FALSE){	
 			
-            $data = array ( 'title'		=>	'Edit Profile'.$users->username,
+            $data = array ( 'title'		=>	'Edit Profile '.$users->username,
                             'users'	=> $users,
 							'content' 	=>	'account/edit');
 			

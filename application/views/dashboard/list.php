@@ -25,7 +25,7 @@
               <span class="info-box-icon bg-success"><i class="fas fa-angle-double-down"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Open</span>
+                <span class="info-box-text">Opening</span>
                 <span class="info-box-number">
                 <?= $trans_open ?> Transaksi Total <br>
                 <?= $trans_openByTime ?> Transaksi Bulan ini
@@ -75,7 +75,7 @@
         <div class="col-md-5">
           <div class="card shadow mb-4 card-info">
             <div class="card-header">
-              <h3 class="card-title">Stocks</h3>
+              <h3 class="card-title">Stocks by Product</h3>
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                 <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
@@ -89,7 +89,7 @@
         <div class="col-md-7">
           <div class="card shadow mb-4 card-success">
             <div class="card-header">
-              <h3 class="card-title">Product By Dept</h3>
+              <h3 class="card-title">Stocks by Branch Plant</h3>
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                 <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
@@ -109,7 +109,7 @@
         <div class="col-md-12">
           <div class="card shadow mb-4 card-warning">
             <div class="card-header">
-              <h3 class="card-title">Transaksi by Mont</h3>
+              <h3 class="card-title">Transacions by Month</h3>
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                 <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>

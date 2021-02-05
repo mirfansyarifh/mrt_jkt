@@ -23,7 +23,7 @@ if($this->session->flashdata('sukses')){
                         <th>NO</th>
                         <th>NO DOKUMEN</th>
                         <th>PRODUK MATERIAL</th>
-                        <th>BY</th>
+                        <th>TRANS BY</th>
                         <th>TANGGAL</th>
                         <th>STOCK</th>
                         <th>AKSI</th>

@@ -18,7 +18,7 @@ class Dashboard_model extends CI_Model
     
     public function getProducts()
     {
-        $this->db->select('no_manufacture, stock');
+        $this->db->select('no_material, stock');
         return $this->db->get('products')->result();
     }
 

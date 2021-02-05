@@ -27,9 +27,9 @@ echo form_open_multipart(base_url('transactions/'.$category.'/edit/'.$transactio
               <div class="col-md-4">
                 <input type="text" name="t_doc_no" class="form-control" placeholder="No Dokumen" value ="<?php echo $transaction->t_doc_no ?>" required>
               </div>
-              <label class="col-md-2 col-form-label"> By</label>
+              <label class="col-md-2 col-form-label"> Trans By</label>
               <div class="col-md-4">
-                <input type="text" name="t_by" class="form-control" placeholder="By" value ="<?php echo $transaction->t_by ?>" required>
+                <input type="text" name="t_by" class="form-control" placeholder="Trans By" value ="<?php echo $transaction->t_by ?>" required>
               </div>
             </div>
             <div class="form-group row">

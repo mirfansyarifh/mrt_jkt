@@ -35,7 +35,7 @@
                 <li class="nav-item">
                   <a href="<?php echo base_url('transactions/transOpen') ?>" class="nav-link">
                     <i class="fa fa-folder-open nav-icon"></i>
-                    <p>TRANSAKSI OPEN</p>
+                    <p>MATERIAL OPENING</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -60,12 +60,12 @@
             <?php 
             
             if ($this->session->userdata('akses_level') == 'admin'){
-            echo '<li class="nav-header" style="padding-left: 20px" >Setting</li>';
+            echo '<li class="nav-header" style="padding-left: 20px" >SETTINGS</li>';
               echo '<li class="nav-item has-treeview menu">
                     <a href="#" class="nav-link">
                     <i class="nav-icon fa fa-wrench"></i>
                     <p>
-                      SETTING
+                      SETTINGS
                       <i class="right fas fa-angle-left"></i>
                     </p>
                     </a>';

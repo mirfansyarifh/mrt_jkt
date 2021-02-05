@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2021 at 12:46 PM
+-- Generation Time: Feb 05, 2021 at 10:04 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.26
 
@@ -50,20 +50,20 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `no_manufacture`, `no_material`, `branch_plant`, `plant`, `dept`, `no_rack`, `no_bin`, `uom`, `store_loc`, `stock`, `desc_1`, `desc_2`, `comment`, `created_at`) VALUES
-(1, 'IMF#000000', '2000000032', 'ASN', NULL, 'AFC', 'E009 B', NULL, 'EA', 'D10 STORE', 0, 'TVM @23', 'TVM MOBILE', NULL, '2021-02-03 17:00:00'),
+(1, 'IMF#000999', '2000000032', 'ASN', NULL, 'AFC', 'E009 B', NULL, 'EA', 'D10 STORE', 0, 'TVM @23', 'TVM MOBILE', NULL, '2021-02-03 17:00:00'),
 (2, 'NJAK-S-P0114', '2000010281', 'BHI', NULL, 'PSD', 'R017 C', NULL, 'EA', 'D10 STORE', 10, 'UG (FULL)_DCU', 'PMFBJ-WAH-FULL (UNDER', 'D10', '2021-01-01 07:57:54'),
 (3, 'NJAK-S-P0101', '2000010282', 'BLA', NULL, 'PSD', 'R017 C', NULL, 'EA', 'D10 STORE', 20, 'UG (FULL)_MOTOR', 'PMFBJ-WAH-FULL (UNDERGROUND)', 'D10', '2021-04-09 07:59:42'),
 (4, 'NG29-S-A0104', '2000000283', 'BLM', NULL, 'AFC', 'TVM @23', 'TVM MOBILE', 'EA', 'E009 B', 0, 'D10 STORE', NULL, NULL, '2021-03-10 08:01:25'),
 (5, 'NJAK-S-P0302', '2000000312', 'BNH', NULL, 'AFC', 'TVM @23', 'TVM MOBILE', 'EA', 'E009 B', 0, 'D10 STORE', NULL, NULL, '2021-03-10 08:01:25'),
 (6, 'NJAK-S-P0108', '2000000313', 'CPR', NULL, 'AFC', 'TVM @23', 'TVM MOBILE', 'EA', 'E009 B', 0, 'D10 STORE', NULL, NULL, '2021-03-10 08:01:25'),
 (7, 'FH8110A', '2000001050', 'DKA', NULL, 'AFC', 'TVM @23', 'TVM MOBILE', 'EA', 'E009 B', 0, 'D10 STORE', NULL, NULL, '2021-03-10 08:01:25'),
-(8, 'FL4015A-290-1', '2000001071', 'FTM', NULL, 'AFC', 'TVM @23', 'TVM MOBILE', 'EA', 'E009 B', 678, 'D10 STORE', NULL, NULL, '2021-03-10 08:01:25'),
 (9, 'IC60N/A9F74210', '2000001071', 'LBB', NULL, 'AFC', 'TVM @23', 'TVM MOBILE', 'EA', 'E009 B', 0, 'D10 STORE', NULL, NULL, '2021-03-10 08:01:25'),
 (10, 'RC1752E', '2000001071', 'SNY', NULL, 'AFC', 'TVM @23', 'TVM MOBILE', 'EA', 'E009 B', 0, 'D10 STORE', NULL, NULL, '2021-03-10 08:01:25'),
 (11, 'RC1752C', '2000001071', 'STB', NULL, 'AFC', 'TVM @23', 'TVM MOBILE', 'EA', 'E009 B', 0, 'D10 STORE', NULL, NULL, '2021-03-10 08:01:25'),
 (12, 'IC60N/A9F74206', '2000001071', 'OTHER', NULL, 'AFC', 'TVM @23', 'TVM MOBILE', 'EA', 'E009 B', 0, 'D10 STORE', NULL, NULL, '2021-03-10 08:01:25'),
 (13, 'IC60N/A9F74325', '2000001071', 'DEPO', NULL, 'AFC', 'TVM @23', 'TVM MOBILE', 'EA', 'E009 B', 0, 'D10 STORE', NULL, NULL, '2021-03-10 08:01:25'),
-(14, 'IC60N/A9F99999', '2000001071', 'MHJN', NULL, 'AFC', 'TVM @23', 'TVM MOBILE', 'EA', 'E009 B', 0, 'D10 STORE', NULL, NULL, '2021-03-10 08:01:25');
+(14, 'IC60N/A9F99999', '2000001071', 'MHJN', NULL, 'AFC', 'TVM @23', 'TVM MOBILE', 'EA', 'E009 B', 0, 'D10 STORE', NULL, NULL, '2021-03-10 08:01:25'),
+(15, 'IMF#00234234', 'Cappucinno', 'OTHER', '', '(OTHER)', '534534', 'asda', 'yiop', 'asdasd', 0, 'yiop', 'asda', '', '2021-02-04 14:03:38');
 
 -- --------------------------------------------------------
 
@@ -76,15 +76,14 @@ CREATE TABLE `trans_consign` (
   `t_doc_no` varchar(64) NOT NULL,
   `t_by` varchar(64) NOT NULL,
   `t_posting_by` varchar(64) DEFAULT NULL,
-  `product_id` int(64) NOT NULL,
+  `product_id` int(11) NOT NULL,
   `stock` int(128) NOT NULL DEFAULT 0,
   `t_detail` longtext DEFAULT NULL,
   `t_start` varchar(64) DEFAULT NULL,
   `t_end` varchar(64) DEFAULT NULL,
   `t_date` date NOT NULL,
   `t_notes` longtext DEFAULT NULL,
-  `t_comment` longtext DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL
+  `t_comment` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -146,26 +145,23 @@ CREATE TABLE `trans_in` (
   `t_doc_no` varchar(64) NOT NULL,
   `t_by` varchar(64) NOT NULL,
   `t_posting_by` varchar(64) DEFAULT NULL,
-  `product_id` int(64) NOT NULL,
+  `product_id` int(11) NOT NULL,
   `stock` int(128) NOT NULL DEFAULT 0,
   `t_detail` longtext DEFAULT NULL,
   `t_start` varchar(64) DEFAULT NULL,
   `t_end` varchar(64) DEFAULT NULL,
   `t_date` date NOT NULL,
   `t_notes` longtext DEFAULT NULL,
-  `t_comment` longtext DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL
+  `t_comment` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `trans_in`
 --
 
-INSERT INTO `trans_in` (`t_id`, `t_doc_no`, `t_by`, `t_posting_by`, `product_id`, `stock`, `t_detail`, `t_start`, `t_end`, `t_date`, `t_notes`, `t_comment`, `user_id`) VALUES
-(1, '1', '111', '111', 1, 100, '', '', '', '2021-03-01', '', '', 1),
-(2, '2', '222', '222', 2, 10, '', '', '', '2021-01-01', '', '', 1),
-(3, '456', '456', '456', 1, 2, '', '', '', '2021-07-01', '', '', 1),
-(4, '678', '456', '678', 8, 678, '', '', '', '2021-06-01', '', '', 1);
+INSERT INTO `trans_in` (`t_id`, `t_doc_no`, `t_by`, `t_posting_by`, `product_id`, `stock`, `t_detail`, `t_start`, `t_end`, `t_date`, `t_notes`, `t_comment`) VALUES
+(1, '1', '111', '111', 1, 100, '', '', '', '2021-03-01', '', ''),
+(2, '2', '222', 'pp', 2, 10, '', '33', '', '2021-01-01', '', '');
 
 --
 -- Triggers `trans_in`
@@ -222,23 +218,22 @@ CREATE TABLE `trans_open` (
   `t_doc_no` varchar(64) NOT NULL,
   `t_by` varchar(64) NOT NULL,
   `t_posting_by` varchar(64) DEFAULT NULL,
-  `product_id` int(64) NOT NULL,
+  `product_id` int(11) NOT NULL,
   `stock` int(128) NOT NULL DEFAULT 0,
   `t_detail` longtext DEFAULT NULL,
   `t_start` varchar(64) DEFAULT NULL,
   `t_end` varchar(64) DEFAULT NULL,
   `t_date` date NOT NULL,
   `t_notes` longtext DEFAULT NULL,
-  `t_comment` longtext DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL
+  `t_comment` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `trans_open`
 --
 
-INSERT INTO `trans_open` (`t_id`, `t_doc_no`, `t_by`, `t_posting_by`, `product_id`, `stock`, `t_detail`, `t_start`, `t_end`, `t_date`, `t_notes`, `t_comment`, `user_id`) VALUES
-(1, '3', '333', '333', 3, 20, '', '', '', '2021-02-01', '', '', 1);
+INSERT INTO `trans_open` (`t_id`, `t_doc_no`, `t_by`, `t_posting_by`, `product_id`, `stock`, `t_detail`, `t_start`, `t_end`, `t_date`, `t_notes`, `t_comment`) VALUES
+(1, '3', '333', 'mm', 3, 20, '', '', '', '2021-02-01', '', '');
 
 --
 -- Triggers `trans_open`
@@ -295,23 +290,22 @@ CREATE TABLE `trans_out` (
   `t_doc_no` varchar(64) NOT NULL,
   `t_by` varchar(64) NOT NULL,
   `t_posting_by` varchar(64) DEFAULT NULL,
-  `product_id` int(64) NOT NULL,
+  `product_id` int(11) NOT NULL,
   `stock` int(128) NOT NULL DEFAULT 0,
   `t_detail` longtext DEFAULT NULL,
   `t_start` varchar(64) DEFAULT NULL,
   `t_end` varchar(64) DEFAULT NULL,
   `t_date` date NOT NULL,
   `t_notes` longtext DEFAULT NULL,
-  `t_comment` longtext DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL
+  `t_comment` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `trans_out`
 --
 
-INSERT INTO `trans_out` (`t_id`, `t_doc_no`, `t_by`, `t_posting_by`, `product_id`, `stock`, `t_detail`, `t_start`, `t_end`, `t_date`, `t_notes`, `t_comment`, `user_id`) VALUES
-(1, 'Kopi Ala', 'asd', '', 1, 300, '', '', '', '2021-07-01', '', '', 1);
+INSERT INTO `trans_out` (`t_id`, `t_doc_no`, `t_by`, `t_posting_by`, `product_id`, `stock`, `t_detail`, `t_start`, `t_end`, `t_date`, `t_notes`, `t_comment`) VALUES
+(2, 'Kopi Ala', 'asd', 'asd', 1, 1, '333', '33', 'sda', '2021-03-01', '333', '');
 
 --
 -- Triggers `trans_out`
@@ -382,8 +376,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `name`, `jabatan`, `akses_level`) VALUES
 (1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Admin', 'admin', 'admin'),
-(2, 'User-1', '12dea96fec20593566ab75692c9949596833adc9', 'User', 'user', 'user'),
-(4, 'Admin-2', '315f166c5aca63a157f7d41007675cb44a948b33', 'Kholid', 'admin', 'admin');
+(2, 'User-1', '12dea96fec20593566ab75692c9949596833adc9', 'User', 'user', 'user');
 
 --
 -- Indexes for dumped tables
@@ -399,25 +392,29 @@ ALTER TABLE `products`
 -- Indexes for table `trans_consign`
 --
 ALTER TABLE `trans_consign`
-  ADD PRIMARY KEY (`t_id`);
+  ADD PRIMARY KEY (`t_id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- Indexes for table `trans_in`
 --
 ALTER TABLE `trans_in`
-  ADD PRIMARY KEY (`t_id`);
+  ADD PRIMARY KEY (`t_id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- Indexes for table `trans_open`
 --
 ALTER TABLE `trans_open`
-  ADD PRIMARY KEY (`t_id`);
+  ADD PRIMARY KEY (`t_id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- Indexes for table `trans_out`
 --
 ALTER TABLE `trans_out`
-  ADD PRIMARY KEY (`t_id`);
+  ADD PRIMARY KEY (`t_id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- Indexes for table `users`
@@ -434,7 +431,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `trans_consign`
@@ -458,13 +455,41 @@ ALTER TABLE `trans_open`
 -- AUTO_INCREMENT for table `trans_out`
 --
 ALTER TABLE `trans_out`
-  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `t_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `trans_consign`
+--
+ALTER TABLE `trans_consign`
+  ADD CONSTRAINT `trans_consign_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `trans_in`
+--
+ALTER TABLE `trans_in`
+  ADD CONSTRAINT `trans_in_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `trans_open`
+--
+ALTER TABLE `trans_open`
+  ADD CONSTRAINT `trans_open_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `trans_out`
+--
+ALTER TABLE `trans_out`
+  ADD CONSTRAINT `trans_out_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

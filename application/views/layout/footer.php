@@ -116,7 +116,7 @@ Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,Bli
                             data: <?= json_encode($c_out); ?>,
                         },
                         {
-                            label: "Transaksi Open",
+                            label: "Material Opening",
                             lineTension: 0.3,
                             backgroundColor: "rgba(0, 255, 0, 0.05)",
                             borderColor: "#84fc03",

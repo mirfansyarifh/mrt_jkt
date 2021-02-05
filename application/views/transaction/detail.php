@@ -17,7 +17,7 @@
 
 <tr>
 <th style="width: 300px;">No Dokumen</th><td style="width: 300px;"><b>: </b><?php echo $transaction->t_doc_no ?></td>
-<th style="width: 300px;">By</th><td style="width: 300px;"><b>: </b><?php echo $transaction->t_by ?></td>
+<th style="width: 300px;">Trans By</th><td style="width: 300px;"><b>: </b><?php echo $transaction->t_by ?></td>
 </tr>
 
 <tr>
