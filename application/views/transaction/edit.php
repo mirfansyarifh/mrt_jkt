@@ -27,9 +27,9 @@ echo form_open_multipart(base_url('transactions/'.$category.'/edit/'.$transactio
               <div class="col-md-4">
                 <input type="text" name="t_doc_no" class="form-control" placeholder="No Dokumen" value ="<?php echo $transaction->t_doc_no ?>" required>
               </div>
-              <label class="col-md-2 col-form-label"> Create By</label>
+              <label class="col-md-2 col-form-label"> By</label>
               <div class="col-md-4">
-                <input type="text" name="t_by" class="form-control" placeholder="Create By" value ="<?php echo $transaction->t_by ?>" required>
+                <input type="text" name="t_by" class="form-control" placeholder="By" value ="<?php echo $transaction->t_by ?>" required>
               </div>
             </div>
             <div class="form-group row">
@@ -37,9 +37,9 @@ echo form_open_multipart(base_url('transactions/'.$category.'/edit/'.$transactio
               <div class="col-md-4">
                 <input type="text" name="t_posting_by" class="form-control" placeholder="Posting By" value ="<?php echo $transaction->t_posting_by ?>">
               </div>
-              <label class="col-md-2 col-form-label"> Product Manufacture</label>
+              <label class="col-md-2 col-form-label"> Product Material</label>
               <div class="col-md-4">
-                <input type="text" name="product_id" class="form-control" placeholder="Product Manufacture" value ="<?php echo $AmbilManufacture[0]->no_manufacture ?>" disabled>
+                <input type="text" name="product_id" class="form-control" placeholder="Product Material" value ="<?php echo $AmbilMaterial[0]->no_material ?>" disabled>
               </div>
             </div>
             <div class="form-group row">
@@ -55,11 +55,11 @@ echo form_open_multipart(base_url('transactions/'.$category.'/edit/'.$transactio
             <div class="form-group row">
               <label class="col-md-2 col-form-label"> Start</label>
               <div class="col-md-4">
-                <input type="text" name="t_start" class="form-control" placeholder="Start" value ="<?php echo $transaction->t_start?>">
+                <input type="text" name="t_start" class="form-control" placeholder="00:00 AM/PM" value ="<?php echo $transaction->t_start?>">
               </div>
               <label class="col-md-2 col-form-label"> End</label>
               <div class="col-md-4">
-                <input type="text" name="t_end" class="form-control" placeholder="End" value ="<?php echo $transaction->t_end?>">
+                <input type="text" name="t_end" class="form-control" placeholder="00:00 AM/PM" value ="<?php echo $transaction->t_end?>">
               </div>
             </div>
             <div class="form-group row">

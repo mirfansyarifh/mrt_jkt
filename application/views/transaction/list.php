@@ -22,7 +22,7 @@ if($this->session->flashdata('sukses')){
                     <tr>
                         <th>NO</th>
                         <th>NO DOKUMEN</th>
-                        <th>PRODUK</th>
+                        <th>PRODUK MATERIAL</th>
                         <th>BY</th>
                         <th>TANGGAL</th>
                         <th>STOCK</th>
@@ -35,7 +35,7 @@ if($this->session->flashdata('sukses')){
                         <tr>
                             <td><?php echo $no ?></td>
                             <td><?php echo $transaction->t_doc_no ?></td>
-                            <td><?php echo $transaction->no_manufacture ?></td>
+                            <td><?php echo $transaction->no_material ?></td>
                             <td><?php echo $transaction->t_by ?></td>
                             <td><?php echo $transaction->t_date ?></td>
                             <td><?php echo $transaction->stock ?? '0' ?></td>

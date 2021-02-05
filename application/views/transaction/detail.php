@@ -17,12 +17,12 @@
 
 <tr>
 <th style="width: 300px;">No Dokumen</th><td style="width: 300px;"><b>: </b><?php echo $transaction->t_doc_no ?></td>
-<th style="width: 300px;">Create By</th><td style="width: 300px;"><b>: </b><?php echo $transaction->t_by ?></td>
+<th style="width: 300px;">By</th><td style="width: 300px;"><b>: </b><?php echo $transaction->t_by ?></td>
 </tr>
 
 <tr>
 <th style="width: 300px;">Posting By</th><td style="width: 300px;"><b>: </b><?php echo $transaction->t_posting_by ?></td>
-<th style="width: 300px;">Product Manufacture</th><td style="width: 300px;"><b>: </b><?php echo $transaction->no_manufacture ?></td>
+<th style="width: 300px;">Product Material</th><td style="width: 300px;"><b>: </b><?php echo $transaction->no_material ?></td>
 </tr>
 
 <tr>

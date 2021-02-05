@@ -20,7 +20,7 @@ class TransConsign_model extends CI_Model {
 		public function listing()
 		{
 			$this->db->select('trans_consign.*,
-								products.no_manufacture');
+								products.no_material');
 			$this->db->from('trans_consign');	
 
 			//  JOIN
@@ -60,10 +60,10 @@ class TransConsign_model extends CI_Model {
 			$this->db->delete('trans_consign', $data);
 		}
 
-		public function AmbilManufacture($t_id)
+		public function AmbilMaterial($t_id)
 		{
 			$this->db->select('trans_consign.t_id,
-								products.no_manufacture');
+								products.no_material');
 			$this->db->from('trans_consign');	
 			$this->db->where('t_id', $t_id);	
 			//  JOIN

@@ -36,7 +36,7 @@ class TransOut extends CI_Controller {
 
 		$valid->set_rules('t_doc_no', 'Nomor Document', 'required|is_unique[trans_in.t_doc_no]',
             array ( 'required'		=> 	'%s harus diisi!',
-					'is_unique'		=>	'%s Nomor Documen sudah ada. Buat product baru!'));
+					'is_unique'		=>	'%s Nomor Document sudah ada. Buat product baru!'));
 
 		$valid->set_rules('t_by', 'By', 'required',
 			array ( 'required'		=> 	'%s harus diisi!'));
@@ -47,7 +47,7 @@ class TransOut extends CI_Controller {
 
 					if($valid->run()==FALSE){
 					
-                        $data = array ( 'title'		=>	'Tambah Transaction Open',
+                        $data = array ( 'title'		=>	'Tambah Transaction Out',
 										'category'	=>	$category,
                                         'products' 	=>	$products,
 										'content' 	=>	'transaction/add');
@@ -69,7 +69,6 @@ class TransOut extends CI_Controller {
 									't_date'	=>	$i->post('t_date'),
 									't_notes'	=>	$i->post('t_notes'),
 									't_comment'	=>	$i->post('t_comment'),
-									'user_id'	=>	$this->session->userdata('id_user'),
 					);
 
 						$this->transout_model->add($data);
@@ -85,7 +84,7 @@ class TransOut extends CI_Controller {
 		// AMBIL DATA FOLDER YANG AKAN DI EDIT DENGAN PARAMETER FOLDER_ID
         $transaction = $this->transout_model->detail($t_id);
 		$category = 'transOut';
-        $AmbilManufacture = $this->transout_model->AmbilManufacture($t_id);
+        $AmbilMaterial = $this->transout_model->AmbilMaterial($t_id);
 
 		// Validasi Input
 		$valid = $this->form_validation;
@@ -104,7 +103,7 @@ class TransOut extends CI_Controller {
 				$data = array ( 'title'		=>	'Edit Transaction',
 								'transaction'	=> $transaction,
 								'category'	=>	$category,
-								'AmbilManufacture'	=>	$AmbilManufacture,
+								'AmbilMaterial'	=>	$AmbilMaterial,
                                 'content' 		=>	'transaction/edit');
 		
                         $this->load->view('layout/wrapper', $data, FALSE);
@@ -125,11 +124,10 @@ class TransOut extends CI_Controller {
                         't_date'	=>	$i->post('t_date'),
                         't_notes'	=>	$i->post('t_notes'),
                         't_comment'	=>	$i->post('t_comment'),
-                        'user_id'	=>	$this->session->userdata('id_user'),
 						  );
 						  
 					$this->transout_model->edit($data);
-                    $this->session->set_flashdata('sukses', 'Data Transaksi telah di ubah!');
+                    $this->session->set_flashdata('sukses', 'Data Transaction telah di ubah!');
                     redirect(base_url('transactions/'.$category), 'refresh');
                 }
 	}

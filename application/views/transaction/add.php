@@ -28,9 +28,9 @@ echo form_open_multipart(base_url('transactions/'.$category.'/add'),' class="for
               <div class="col-md-4">
                 <input type="text" name="t_doc_no" class="form-control" placeholder="No Dokumen" value ="<?php echo set_value('t_doc_no')?>" required>
               </div>
-              <label class="col-md-2 col-form-label"> Create By</label>
+              <label class="col-md-2 col-form-label"> By</label>
               <div class="col-md-4">
-                <input type="text" name="t_by" class="form-control" placeholder="Create By" value ="<?php echo set_value('t_by')?>" required>
+                <input type="text" name="t_by" class="form-control" placeholder=" By" value ="<?php echo set_value('t_by')?>" required>
               </div>
             </div>
             <div class="form-group row">
@@ -38,12 +38,12 @@ echo form_open_multipart(base_url('transactions/'.$category.'/add'),' class="for
               <div class="col-md-4">
                 <input type="text" name="t_posting_by" class="form-control" placeholder="Posting By" value ="<?php echo set_value('t_posting_by')?>">
               </div>
-              <label class="col-md-2 col-form-label"> Product Manufacture</label>
+              <label class="col-md-2 col-form-label"> Product Material</label>
               <div class="col-md-4">
                 <select name="product_id" class="form-control col-md-12">
                 <?php foreach($products as $products) { ?>
                   <option value="<?php echo $products->product_id ?>">
-                    <?php echo $products->no_manufacture ?>
+                    <?php echo $products->no_material ?>
                   </option> 
                 <?php } ?>
                 </select>
