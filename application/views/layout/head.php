@@ -70,7 +70,7 @@
             },
             data: [{
                 type: "column", //change type to bar, line, area, pie, etc
-                indexLabel: "{y} Product", //Shows y value on all Data Points
+                indexLabel: "{y} stock", //Shows y value on all Data Points
                 indexLabelFontColor: "#5A5757",
                 indexLabelFontSize: 12,
                 dataPoints: [      
@@ -107,7 +107,7 @@
             },
             data: [{
                 type: "bar", //change type to bar, line, area, pie, etc
-                indexLabel: "{y} stock", //Shows y value on all Data Points
+                indexLabel: "{y} product", //Shows y value on all Data Points
                 indexLabelFontColor: "#5A5757",
                 indexLabelFontSize: 12,
                 dataPoints: [      

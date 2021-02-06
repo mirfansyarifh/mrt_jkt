@@ -126,7 +126,7 @@
 
       <div class="row">
         <div class="col-md-12">
-          <div class="card shadow mb-4 card-warning">
+          <div class="card shadow mb-4 card-primary">
             <div class="card-header">
               <h3 class="card-title">Activity By Dept</h3>
               <div class="card-tools">
