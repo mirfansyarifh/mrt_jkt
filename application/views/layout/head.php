@@ -92,6 +92,43 @@
             }]
             });
             chartStockbyDept.render();
+
+            // CHART BY TIME
+        
+        var chartProductbyDept = new CanvasJS.Chart("chartProductbyDept", {
+            animationEnabled: true,
+            // exportEnabled: true,
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            axisY: {
+                includeZero: true
+            },
+            axisX: {
+                interval: 1,
+            },
+            data: [{
+                type: "bar", //change type to bar, line, area, pie, etc
+                indexLabel: "{y} stock", //Shows y value on all Data Points
+                indexLabelFontColor: "#5A5757",
+                indexLabelFontSize: 12,
+                dataPoints: [      
+                        { y: <?= $P_ASN ?? 0; ?>, label: "ASN" },
+                        { y: <?= $P_BHI ?? 0; ?>, label: "BHI" },
+                        { y: <?= $P_BLA ?? 0; ?>, label: "BLA" },
+                        { y: <?= $P_BLM ?? 0; ?>, label: "BLM" },
+                        { y: <?= $P_BNH ?? 0; ?>, label: "BNH" },
+                        { y: <?= $P_CPR ?? 0; ?>, label: "CPR" },
+                        { y: <?= $P_DEPO ?? 0; ?>, label: "DEPO" },
+                        { y: <?= $P_DKA ?? 0; ?>, label: "DKA" },
+                        { y: <?= $P_FTM ?? 0; ?>, label: "FTM" },
+                        { y: <?= $P_MHJN ?? 0; ?>, label: "MHJN" },
+                        { y: <?= $P_LBB ?? 0; ?>, label: "LBB" },
+                        { y: <?= $P_SNY ?? 0; ?>, label: "SNY" },
+                        { y: <?= $P_STB ?? 0; ?>, label: "STB" },
+                        { y: <?= $P_OTHER ?? 0; ?>, label: "OTHER" },
+                    ]
+            }]
+            });
+            chartProductbyDept.render();
         }
       </script>
 <?php endif; ?>

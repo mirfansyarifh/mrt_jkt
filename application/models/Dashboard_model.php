@@ -31,6 +31,12 @@ class Dashboard_model extends CI_Model
         return $this->db->get('products')->row_array()['stock'];
     }
 
+    public function countProductByBranch($branch)
+    {
+        $this->db->where('branch_plant', $branch);
+        return count($this->db->get('products')->result_array());
+    }
+
     public function chartIn($bulan){
 
         $like = date('Y') .'-'. $bulan;
