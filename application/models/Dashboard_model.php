@@ -31,9 +31,9 @@ class Dashboard_model extends CI_Model
         return $this->db->get('products')->row_array()['stock'];
     }
 
-    public function countProductByBranch($branch)
+    public function countProductByDept($dept)
     {
-        $this->db->where('branch_plant', $branch);
+        $this->db->where('dept', $dept);
         return count($this->db->get('products')->result_array());
     }
 

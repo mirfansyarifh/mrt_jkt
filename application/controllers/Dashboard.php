@@ -53,21 +53,20 @@ class Dashboard extends CI_Controller {
 		$data['STB'] = $this->dashboard->countByBranch('STB');
 		$data['OTHER'] = $this->dashboard->countByBranch('OTHER');
 
-
-		$data['P_ASN'] = $this->dashboard->countProductByBranch('ASN');
-		$data['P_BHI'] = $this->dashboard->countProductByBranch('BHI');
-		$data['P_BLA'] = $this->dashboard->countProductByBranch('BLA');
-		$data['P_BLM'] = $this->dashboard->countProductByBranch('BLM');
-		$data['P_BNH'] = $this->dashboard->countProductByBranch('BNH');
-		$data['P_CPR'] = $this->dashboard->countProductByBranch('CPR');
-		$data['P_DEPO'] = $this->dashboard->countProductByBranch('DEPO');
-		$data['P_DKA'] = $this->dashboard->countProductByBranch('DKA');
-		$data['P_FTM'] = $this->dashboard->countProductByBranch('FTM');
-		$data['P_MHJN'] = $this->dashboard->countProductByBranch('MHJN');
-		$data['P_LBB'] = $this->dashboard->countProductByBranch('LBB');
-		$data['P_SNY'] = $this->dashboard->countProductByBranch('SNY');
-		$data['P_STB'] = $this->dashboard->countProductByBranch('STB');
-		$data['P_OTHER'] = $this->dashboard->countProductByBranch('OTHER');
+		// DEPT	
+		$data['PWR'] = $this->dashboard->countProductByDept('PWR');
+		$data['AFC'] = $this->dashboard->countProductByDept('AFC');
+		$data['CVL'] = $this->dashboard->countProductByDept('CVL');
+		$data['DWE'] = $this->dashboard->countProductByDept('DWE');
+		$data['GEN'] = $this->dashboard->countProductByDept('GEN');
+		$data['ME'] = $this->dashboard->countProductByDept('ME');
+		$data['PSD'] = $this->dashboard->countProductByDept('PSD');
+		$data['RS'] = $this->dashboard->countProductByDept('RS');
+		$data['SCM'] = $this->dashboard->countProductByDept('SCM');
+		$data['SIG'] = $this->dashboard->countProductByDept('SIG');
+		$data['TEL'] = $this->dashboard->countProductByDept('TEL');
+		$data['TWK'] = $this->dashboard->countProductByDept('TWK');
+		$data['OTHER'] = $this->dashboard->countProductByDept('OTHER');
 
 			//Line Chart
 
