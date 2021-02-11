@@ -96,8 +96,8 @@ echo form_open_multipart(base_url('products/edit/'.$products->product_id),' clas
                     echo ' <option value="SIG">SIG</option> '; 
                     echo ' <option value="TEL">TEL</option> '; 
                     echo ' <option value="TWK">TWK</option> '; 
-                  } else if ($products->branch_plant != NULL) {
-                    echo '<option selected="selected" value="'.$products->plant.'">'.$products->plant.'</option>';
+                  } else if ($products->dept != NULL) {
+                    echo '<option selected="selected" value="'.$products->dept.'">'.$products->dept.'</option>';
                     echo ' <option value="PWR">PWR</option> '; 
                     echo ' <option value="AFC">AFC</option> '; 
                     echo ' <option value="CVL">CVL</option> '; 
@@ -138,6 +138,7 @@ echo form_open_multipart(base_url('products/edit/'.$products->product_id),' clas
               <label class="col-md-2 col-form-label"> Stock</label>
               <div class="col-md-4">
                 <input type="text" name="stock" class="form-control" placeholder="Stock" value ="<?php echo $products->stock?>" disabled>
+                <input type="hidden" name="stock" class="form-control" placeholder="Stock" value ="<?php echo $products->stock?>">
               </div>
             </div>
             <div class="form-group row">
